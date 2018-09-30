@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example.pasha</groupId>
-	<artifactId>spring-boot-demo2</artifactId>
+	<groupId>com.example.project</groupId>
+	<artifactId>spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>spring-boot-demo2</name>
+	<name>spring</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -30,6 +30,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 		<dependency>
@@ -46,6 +50,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.6.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.18.0-GA</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,6 +76,23 @@
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+			</plugin>
+			<plugin>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-maven-plugin</artifactId>
+			<version>3.4.2</version>
+			<configuration>
+				<propertyFile>liquibase.properties</propertyFile>
+				<changeLogFile>db/changelog/db.changelog-master.xml</changeLogFile>
+			</configuration>
+            <executions>
+              <execution>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>update</goal>
+                </goals>
+              </execution>
+            </executions>
 			</plugin>
 		</plugins>
 	</build>
