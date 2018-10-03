@@ -1,6 +1,6 @@
 /target/
 
-!target/spring-boot-demo2-0.0.1-SNAPSHOT.jar
+!target/spring-0.0.1-SNAPSHOT.jar
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

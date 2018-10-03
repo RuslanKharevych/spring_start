@@ -1,10 +1,16 @@
 --liquibase formatted sql
 
---changeset User2:2
-insert into User (id, name) values (1, 'User1');
-insert into User (id, name) values (2, 'User2');
-insert into User (id, name) values (3, 'User3');
-insert into User (id, name) values (4, 'User4');
-insert into User (id, name) values (5, 'User5');
-insert into User (id, name) values (6, 'User6');
-insert into User (id, name) values (7, 'User7');
+--changeset Group:create groups
+
+create table Course (
+    id_course int primary key,
+    name varchar(255),
+    type varchar(255)
+);
+
+insert into Course (id_course, name, type) values (1, 'Course1','first');
+insert into Course (id_course, name, type) values (2, 'Course2','second');
+insert into Course (id_course, name, type) values (3, 'Course3','third');
+insert into Course (id_course, name, type) values (4, 'Course4','fourth');
+insert into Course (id_course, name, type) values (5, 'Course5','fifth');
+
