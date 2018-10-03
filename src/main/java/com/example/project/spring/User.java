@@ -1,5 +1,4 @@
 package com.example.project.spring;
-import org.hibernate.annotations.Proxy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +7,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="User")
-@Proxy(lazy = false)
 public class User {
     @Id
     @Column(name="id")
