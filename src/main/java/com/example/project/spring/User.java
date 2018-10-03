@@ -19,7 +19,7 @@ public class User {
     @JoinTable(
             name = "User_Course",
             joinColumns = { @JoinColumn(name = "id_user") },
-            inverseJoinColumns = { @JoinColumn(name = "id_group") }
+            inverseJoinColumns = { @JoinColumn(name = "id_course") }
     )
     private List<Course> courses = new ArrayList<>();
 

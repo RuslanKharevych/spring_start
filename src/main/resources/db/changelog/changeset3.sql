@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset User_Group:create groups and users connection
+--changeset User_Course:create courses and users connection
 create table User_Course(
     id_user_course int primary key,
     id_user int,

@@ -1,7 +1,5 @@
 package com.example.project.spring;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +18,19 @@ public class Course {
     public Course() {
     }
 
-    public Course(int id_group, String name, String type) {
-        this.id_course = id_group;
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public Course(int id_course, String name, String type, List<User> users) {
+        this.id_course = id_course;
         this.name = name;
         this.type = type;
+        this.users = users;
     }
 
     public int getId_course() {
