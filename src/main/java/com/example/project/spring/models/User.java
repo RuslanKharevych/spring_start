@@ -1,8 +1,7 @@
-package com.example.project.spring;
+package com.example.project.spring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
